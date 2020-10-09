@@ -9,8 +9,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/MenuList";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import { createConfigurationMenu } from "@saleor/configuration";
 import useAppState from "@saleor/hooks/useAppState";
 import useLocalStorage from "@saleor/hooks/useLocalStorage";
@@ -379,7 +379,15 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                     [classes.logoDark]: isDark
                   })}
                 >
-                  {isMenuSmall ? <Typography variant="h3" component="h3">HL</Typography> : <Typography variant="h4" component="h4">HyperLocal</Typography>}
+                  {isMenuSmall ? (
+                    <Typography variant="h3" component="h3">
+                      HL
+                    </Typography>
+                  ) : (
+                      <Typography variant="h4" component="h4">
+                        HyperLocal
+                      </Typography>
+                    )}
                 </div>
                 <Hidden smDown>
                   <div
@@ -411,8 +419,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
               {appState.loading ? (
                 <LinearProgress className={classes.appLoader} color="primary" />
               ) : (
-                <div className={classes.appLoaderPlaceholder} />
-              )}
+                  <div className={classes.appLoaderPlaceholder} />
+                )}
               <div className={classes.viewContainer}>
                 <div>
                   <Container>
@@ -526,8 +534,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                 <main className={classes.view}>
                   {appState.error
                     ? appState.error === "unhandled" && (
-                        <ErrorPage onBack={handleErrorBack} />
-                      )
+                      <ErrorPage onBack={handleErrorBack} />
+                    )
                     : children}
                 </main>
               </div>
