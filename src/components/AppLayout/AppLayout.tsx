@@ -381,13 +381,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                     [classes.logoDark]: isDark
                   })}
                 >
-                  {isMenuSmall ? 
-                  <Typography variant="h3" component="h3">
-                    HL
-                  </Typography> : 
-                  <Typography variant="h4" component="h4">
-                    HyperLocal
-                  </Typography>}
+                  {isMenuSmall ? <Typography variant="h3" component="h3">HL</Typography> : <Typography variant="h4" component="h4">HyperLocal</Typography>}
                 </div>
                 <Hidden smDown>
                   <div
