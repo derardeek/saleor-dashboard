@@ -1,5 +1,3 @@
-import saleorDarkLogoSmall from "@assets/images/logo-dark-small.svg";
-import saleorDarkLogo from "@assets/images/logo-dark.svg";
 import menuArrowIcon from "@assets/images/menu-arrow-icon.svg";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
@@ -12,6 +10,7 @@ import Menu from "@material-ui/core/MenuList";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
 import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import { createConfigurationMenu } from "@saleor/configuration";
 import useAppState from "@saleor/hooks/useAppState";
 import useLocalStorage from "@saleor/hooks/useLocalStorage";
@@ -145,9 +144,11 @@ const useStyles = makeStyles(
         transform: "translate(-50%,-50%)"
       },
       background: theme.palette.secondary.main,
+      color: "white",
       display: "block",
       height: 80,
-      position: "relative"
+      position: "relative",
+      textAlign: "center"
     },
     logoDark: {
       "& path": {
@@ -379,9 +380,15 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                     [classes.logoDark]: isDark
                   })}
                 >
-                  <SVG
-                    src={isMenuSmall ? saleorDarkLogoSmall : saleorDarkLogo}
-                  />
+                  {isMenuSmall ? (
+                    <Typography variant="h3" component="h3">
+                      HL
+                    </Typography>
+                  ) : (
+                    <Typography variant="h4" component="h4">
+                      HyperLocal
+                    </Typography>
+                  )}
                 </div>
                 <Hidden smDown>
                   <div
