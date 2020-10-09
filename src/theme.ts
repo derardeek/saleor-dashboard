@@ -20,7 +20,7 @@ const createShadow = (pv, pb, ps, uv, ub, us, av, ab, as) =>
 
 export const ICONBUTTON_SIZE = 48;
 
-const fontFamily = '"Inter", "roboto", "sans-serif"';
+const fontFamily = '"Manrope", "roboto", "sans-serif"';
 
 export default (colors: IThemeColors): Theme =>
   createMuiTheme({
