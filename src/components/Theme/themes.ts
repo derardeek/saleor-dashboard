@@ -64,7 +64,7 @@ export const dark: IThemeColors = {
   },
   paperBorder: "#252728",
   primary: "#13BEBB",
-  secondary: "#21125E",
+  secondary: "#0078d4",
   theme: "dark"
 };
 export const light: IThemeColors = {
@@ -101,6 +101,6 @@ export const light: IThemeColors = {
   },
   paperBorder: "#EAEAEA",
   primary: "#06847B",
-  secondary: "#21125E",
+  secondary: "#0078d4",
   theme: "light"
 };

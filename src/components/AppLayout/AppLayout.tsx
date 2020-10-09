@@ -11,6 +11,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/MenuList";
 import Paper from "@material-ui/core/Paper";
 import Popper from "@material-ui/core/Popper";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { createConfigurationMenu } from "@saleor/configuration";
 import useAppState from "@saleor/hooks/useAppState";
@@ -146,6 +147,7 @@ const useStyles = makeStyles(
       },
       background: theme.palette.secondary.main,
       display: "block",
+      color: "white",
       height: 80,
       position: "relative"
     },
@@ -379,9 +381,13 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                     [classes.logoDark]: isDark
                   })}
                 >
-                  <SVG
-                    src={isMenuSmall ? saleorDarkLogoSmall : saleorDarkLogo}
-                  />
+                  {isMenuSmall ? 
+                  <Typography variant="h3" component="h3">
+                    HL
+                  </Typography> : 
+                  <Typography variant="h4" component="h4">
+                    HyperLocal
+                  </Typography>}
                 </div>
                 <Hidden smDown>
                   <div
