@@ -147,6 +147,7 @@ const useStyles = makeStyles(
       color: "white",
       display: "block",
       height: 80,
+      paddingTop: "12px",
       position: "relative",
       textAlign: "center"
     },
@@ -162,6 +163,9 @@ const useStyles = makeStyles(
         padding: 0,
         width: "80px"
       }
+    },
+    logoText: {
+      color: "#fff",
     },
     menu: {
       background: theme.palette.background.paper,
@@ -381,14 +385,14 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                   })}
                 >
                   {isMenuSmall ? (
-                    <Typography variant="h3" component="h3">
+                    <Typography className={classes.logoText} variant="h3" component="h3">
                       HL
                     </Typography>
                   ) : (
-                    <Typography variant="h4" component="h4">
-                      HyperLocal
-                    </Typography>
-                  )}
+                      <Typography className={classes.logoText} variant="h4" component="h4">
+                        HyperLocal
+                      </Typography>
+                    )}
                 </div>
                 <Hidden smDown>
                   <div
@@ -420,8 +424,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
               {appState.loading ? (
                 <LinearProgress className={classes.appLoader} color="primary" />
               ) : (
-                <div className={classes.appLoaderPlaceholder} />
-              )}
+                  <div className={classes.appLoaderPlaceholder} />
+                )}
               <div className={classes.viewContainer}>
                 <div>
                   <Container>
@@ -535,8 +539,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                 <main className={classes.view}>
                   {appState.error
                     ? appState.error === "unhandled" && (
-                        <ErrorPage onBack={handleErrorBack} />
-                      )
+                      <ErrorPage onBack={handleErrorBack} />
+                    )
                     : children}
                 </main>
               </div>
