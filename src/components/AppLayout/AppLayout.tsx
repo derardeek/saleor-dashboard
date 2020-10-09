@@ -144,10 +144,11 @@ const useStyles = makeStyles(
         transform: "translate(-50%,-50%)"
       },
       background: theme.palette.secondary.main,
-      display: "block",
       color: "white",
+      display: "block",
       height: 80,
-      position: "relative"
+      position: "relative",
+      textAlign: "center"
     },
     logoDark: {
       "& path": {
@@ -384,10 +385,10 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                       HL
                     </Typography>
                   ) : (
-                      <Typography variant="h4" component="h4">
-                        HyperLocal
-                      </Typography>
-                    )}
+                    <Typography variant="h4" component="h4">
+                      HyperLocal
+                    </Typography>
+                  )}
                 </div>
                 <Hidden smDown>
                   <div
@@ -419,8 +420,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
               {appState.loading ? (
                 <LinearProgress className={classes.appLoader} color="primary" />
               ) : (
-                  <div className={classes.appLoaderPlaceholder} />
-                )}
+                <div className={classes.appLoaderPlaceholder} />
+              )}
               <div className={classes.viewContainer}>
                 <div>
                   <Container>
@@ -534,8 +535,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                 <main className={classes.view}>
                   {appState.error
                     ? appState.error === "unhandled" && (
-                      <ErrorPage onBack={handleErrorBack} />
-                    )
+                        <ErrorPage onBack={handleErrorBack} />
+                      )
                     : children}
                 </main>
               </div>
